@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.GeneralMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,13 +36,14 @@
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToggleMenu = new System.Windows.Forms.Button();
             this.MenuMapContainer = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Timer_UpdateMap = new System.Windows.Forms.Timer(this.components);
+            this.Panel_Map = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.GeneralMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).BeginInit();
             this.MenuMapContainer.Panel1.SuspendLayout();
             this.MenuMapContainer.Panel2.SuspendLayout();
             this.MenuMapContainer.SuspendLayout();
+            this.Panel_Map.SuspendLayout();
             this.SuspendLayout();
             // 
             // GeneralMenuStrip
@@ -120,28 +120,33 @@
             // MenuMapContainer.Panel2
             // 
             this.MenuMapContainer.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.MenuMapContainer.Panel2.Controls.Add(this.panel1);
+            this.MenuMapContainer.Panel2.Controls.Add(this.Panel_Map);
             this.MenuMapContainer.Panel2MinSize = 559;
             this.MenuMapContainer.Size = new System.Drawing.Size(739, 455);
             this.MenuMapContainer.SplitterDistance = 35;
             this.MenuMapContainer.SplitterWidth = 1;
             this.MenuMapContainer.TabIndex = 1;
             // 
-            // panel1
+            // Panel_Map
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(71, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 346);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.Panel_Map.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Panel_Map.Controls.Add(this.listBox1);
+            this.Panel_Map.Location = new System.Drawing.Point(114, 26);
+            this.Panel_Map.Name = "Panel_Map";
+            this.Panel_Map.Size = new System.Drawing.Size(400, 400);
+            this.Panel_Map.TabIndex = 0;
             // 
-            // Timer_UpdateMap
+            // listBox1
             // 
-            this.Timer_UpdateMap.Interval = 10;
-            this.Timer_UpdateMap.Tick += new System.EventHandler(this.Timer_UpdateMap_Tick);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Какой то текст",
+            "Какой то текст",
+            "Какой то текст"});
+            this.listBox1.Location = new System.Drawing.Point(145, 137);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 121);
+            this.listBox1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -162,6 +167,7 @@
             this.MenuMapContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).EndInit();
             this.MenuMapContainer.ResumeLayout(false);
+            this.Panel_Map.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,8 +183,8 @@
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.Button ToggleMenu;
         private System.Windows.Forms.SplitContainer MenuMapContainer;
-        private System.Windows.Forms.Timer Timer_UpdateMap;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Panel_Map;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

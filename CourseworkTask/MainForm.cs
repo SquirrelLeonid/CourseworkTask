@@ -7,12 +7,23 @@ namespace CourseworkTask
 {
     public partial class MainForm : Form
     {
-        private bool _mouseHold;
-        private Point _prevMousePos;
+        private MapModel _mapModel;
 
         public MainForm()
         {
             InitializeComponent();
+            InitFieldsState();
+            //InitAdditionalEvents();
+        }
+
+        private void InitFieldsState()
+        {
+            _mapModel = new MapModel(Panel_Map);
+        }
+
+        private void InitAdditionalEvents()
+        {
+
         }
 
         #region MainForm's buttons event
@@ -45,41 +56,5 @@ namespace CourseworkTask
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
         }
         #endregion
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            _prevMousePos = PointToClient(Cursor.Position);
-            Cursor.Current = Cursors.Hand;
-            _mouseHold = true;
-        }
-
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            _mouseHold = false;
-            Timer_UpdateMap.Stop();
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            Timer_UpdateMap.Start();
-        }
-
-        private void Timer_UpdateMap_Tick(object sender, EventArgs e)
-        {
-            //TODO вынести в отдельный класс MapVisualizer
-            if (_mouseHold)
-            {
-                int mousePosX = PointToClient(Cursor.Position).X;
-                int mousePosY = PointToClient(Cursor.Position).Y;
-
-                int diffX = mousePosX - _prevMousePos.X;
-                int diffY = mousePosY - _prevMousePos.Y;
-
-                panel1.Location = new Point(panel1.Location.X + diffX, panel1.Location.Y + diffY);
-
-                _prevMousePos.X = mousePosX;
-                _prevMousePos.Y = mousePosY;
-            }
-        }
     }
 }
