@@ -32,6 +32,8 @@
             this.AcceptButton = new System.Windows.Forms.Button();
             this.SelectedFilesCount = new System.Windows.Forms.TextBox();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.Prompt_PictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Prompt_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ListSelectedFiles
@@ -44,8 +46,7 @@
             this.ListSelectedFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListSelectedFiles.Size = new System.Drawing.Size(464, 238);
             this.ListSelectedFiles.TabIndex = 0;
-            this.ListSelectedFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListSelectedFiles_DragDrop);
-            this.ListSelectedFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListSelectedFiles_DragEnter);
+            this.ListSelectedFiles.Visible = false;
             // 
             // AcceptButton
             // 
@@ -76,12 +77,25 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // Prompt_PictureBox
+            // 
+            this.Prompt_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Prompt_PictureBox.Image = global::CourseworkTask.Properties.Resources.DragAndDropImage;
+            this.Prompt_PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.Prompt_PictureBox.Name = "Prompt_PictureBox";
+            this.Prompt_PictureBox.Size = new System.Drawing.Size(464, 238);
+            this.Prompt_PictureBox.TabIndex = 4;
+            this.Prompt_PictureBox.TabStop = false;
+            this.Prompt_PictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.Prompt_PictureBox_DragDrop);
+            this.Prompt_PictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.Prompt_PictureBox_DragEnter);
+            // 
             // CopyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 321);
             this.ControlBox = false;
+            this.Controls.Add(this.Prompt_PictureBox);
             this.Controls.Add(this.SelectedFilesCount);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AcceptButton);
@@ -91,6 +105,7 @@
             this.Name = "CopyForm";
             this.ShowIcon = false;
             this.Text = "CopyForm";
+            ((System.ComponentModel.ISupportInitialize)(this.Prompt_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +117,6 @@
         private System.Windows.Forms.Button AcceptButton;
         private System.Windows.Forms.TextBox SelectedFilesCount;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.PictureBox Prompt_PictureBox;
     }
 }
