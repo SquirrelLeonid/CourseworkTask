@@ -63,6 +63,16 @@ namespace CourseworkTask.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DragAndDropImage {
+            get {
+                object obj = ResourceManager.GetObject("DragAndDropImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuIcon {
             get {
                 object obj = ResourceManager.GetObject("MenuIcon", resourceCulture);

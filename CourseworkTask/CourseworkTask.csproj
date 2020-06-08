@@ -94,5 +94,8 @@
   <ItemGroup>
     <None Include="Resources\MenuIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\DragAndDropImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
