@@ -45,12 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CopyForm.cs">
+    <Compile Include="ExceptionLoggerSingleton.cs" />
+    <Compile Include="FileParser.cs" />
+    <Compile Include="FileReaderSingleton.cs" />
+    <Compile Include="FilesAddingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CopyForm.Designer.cs">
-      <DependentUpon>CopyForm.cs</DependentUpon>
+    <Compile Include="FilesAddingForm.Designer.cs">
+      <DependentUpon>FilesAddingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Document.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,10 +64,11 @@
     <Compile Include="MapModel.cs" />
     <Compile Include="MapOrganiser.cs" />
     <Compile Include="MapVisualizer.cs" />
+    <Compile Include="ParsedCodeKeeper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CopyForm.resx">
-      <DependentUpon>CopyForm.cs</DependentUpon>
+    <EmbeddedResource Include="FilesAddingForm.resx">
+      <DependentUpon>FilesAddingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

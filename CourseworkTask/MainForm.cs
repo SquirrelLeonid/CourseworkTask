@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ namespace CourseworkTask
     public partial class MainForm : Form
     {
         private MapModel _mapModel;
+        private FileParser _fileParser;
 
         public MainForm()
         {
@@ -19,6 +21,7 @@ namespace CourseworkTask
         private void InitFieldsState()
         {
             _mapModel = new MapModel(Panel_Map);
+            _fileParser = new FileParser();
         }
 
         private void InitAdditionalEvents()
@@ -39,8 +42,11 @@ namespace CourseworkTask
 
         private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CopyForm copyForm = new CopyForm();
-            copyForm.ShowDialog();
+            FilesAddingForm filesAddingForm = new FilesAddingForm();
+            filesAddingForm.ShowDialog();
+            List<Document> result = filesAddingForm.GetReadResult();
+            _fileParser.ParseCodeListings(result);
+
         }
         #endregion
 

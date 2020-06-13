@@ -11,9 +11,11 @@ using System.Windows.Forms;
 
 namespace CourseworkTask
 {
-    public partial class CopyForm : Form
+    public partial class FilesAddingForm : Form
     {
-        public CopyForm()
+        private List<Document> _readResult;
+
+        public FilesAddingForm()
         {
             InitializeComponent();
             ListSelectedFiles.Visible = false;
@@ -21,13 +23,21 @@ namespace CourseworkTask
             Prompt_PictureBox.AllowDrop = true;
         }
 
+        public List<Document> GetReadResult()
+        {
+            return _readResult;
+        }
+
         private void UpdateInfo()
         {
             SelectedFilesCount.Text = "Выбрано файлов: " + ListSelectedFiles.Items.Count;
         }
 
+        //TODO: Добавить проверку на то что файлы вообще были добавлены
         private void AcceptButton_Click(object sender, EventArgs e)
         {
+            FileReaderSingleton fileReader = FileReaderSingleton.GetReference();
+            _readResult = fileReader.ReadFiles(ListSelectedFiles.Items);
             this.Close();
         }
 
@@ -56,6 +66,7 @@ namespace CourseworkTask
             }
         }
 
+        //TODO: NullReference exception
         private List<string> CheckExtensions(string[] files)
         {
             List<string> correctFiles = new List<string>();
