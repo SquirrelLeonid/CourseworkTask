@@ -1,6 +1,6 @@
 ﻿namespace CourseworkTask
 {
-    partial class CopyForm
+    partial class FilesAddingForm
     {
         /// <summary>
         /// Required designer variable.

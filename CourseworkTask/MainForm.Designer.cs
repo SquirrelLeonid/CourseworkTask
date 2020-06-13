@@ -34,16 +34,14 @@
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToggleMenu = new System.Windows.Forms.Button();
             this.MenuMapContainer = new System.Windows.Forms.SplitContainer();
             this.Panel_Map = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ToggleMenu = new System.Windows.Forms.Button();
             this.GeneralMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).BeginInit();
             this.MenuMapContainer.Panel1.SuspendLayout();
             this.MenuMapContainer.Panel2.SuspendLayout();
             this.MenuMapContainer.SuspendLayout();
-            this.Panel_Map.SuspendLayout();
             this.SuspendLayout();
             // 
             // GeneralMenuStrip
@@ -71,37 +69,27 @@
             // CreateToolStripMenuItem
             // 
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
-            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CreateToolStripMenuItem.Text = "Создать";
             this.CreateToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaveToolStripMenuItem.Text = "Сохранить";
             // 
             // SaveAsКакToolStripMenuItem
             // 
             this.SaveAsКакToolStripMenuItem.Name = "SaveAsКакToolStripMenuItem";
-            this.SaveAsКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.SaveAsКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaveAsКакToolStripMenuItem.Text = "Сохранить как";
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.LoadToolStripMenuItem.Text = "Открыть";
-            // 
-            // ToggleMenu
-            // 
-            this.ToggleMenu.BackgroundImage = global::CourseworkTask.Properties.Resources.MenuIcon;
-            this.ToggleMenu.Location = new System.Drawing.Point(0, 0);
-            this.ToggleMenu.Name = "ToggleMenu";
-            this.ToggleMenu.Size = new System.Drawing.Size(35, 35);
-            this.ToggleMenu.TabIndex = 0;
-            this.ToggleMenu.UseVisualStyleBackColor = true;
-            this.ToggleMenu.Click += new System.EventHandler(this.ToggleMenu_Click);
             // 
             // MenuMapContainer
             // 
@@ -130,23 +118,20 @@
             // Panel_Map
             // 
             this.Panel_Map.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Panel_Map.Controls.Add(this.listBox1);
             this.Panel_Map.Location = new System.Drawing.Point(114, 26);
             this.Panel_Map.Name = "Panel_Map";
             this.Panel_Map.Size = new System.Drawing.Size(400, 400);
             this.Panel_Map.TabIndex = 0;
             // 
-            // listBox1
+            // ToggleMenu
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Какой то текст",
-            "Какой то текст",
-            "Какой то текст"});
-            this.listBox1.Location = new System.Drawing.Point(145, 137);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 121);
-            this.listBox1.TabIndex = 0;
+            this.ToggleMenu.BackgroundImage = global::CourseworkTask.Properties.Resources.MenuIcon;
+            this.ToggleMenu.Location = new System.Drawing.Point(0, 0);
+            this.ToggleMenu.Name = "ToggleMenu";
+            this.ToggleMenu.Size = new System.Drawing.Size(35, 35);
+            this.ToggleMenu.TabIndex = 0;
+            this.ToggleMenu.UseVisualStyleBackColor = true;
+            this.ToggleMenu.Click += new System.EventHandler(this.ToggleMenu_Click);
             // 
             // MainForm
             // 
@@ -167,7 +152,6 @@
             this.MenuMapContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).EndInit();
             this.MenuMapContainer.ResumeLayout(false);
-            this.Panel_Map.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +168,6 @@
         private System.Windows.Forms.Button ToggleMenu;
         private System.Windows.Forms.SplitContainer MenuMapContainer;
         private System.Windows.Forms.Panel Panel_Map;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
