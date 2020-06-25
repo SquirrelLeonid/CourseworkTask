@@ -1,32 +1,32 @@
 ﻿
+using System;
 using System.Collections.Generic;
 
 namespace CourseworkTask
 {
     public class ParsedCodeKeeper
     {
-        private readonly Dictionary<string, Dictionary<string, List<string>>> _storage;
+        public Dictionary<string, List<MethodRecord>> Storage { get; }
+        public Tuple<string,string> EntryPoint { get; protected set; }
 
         public ParsedCodeKeeper()
         {
-            _storage = new Dictionary<string, Dictionary<string, List<string>>>();
+            Storage = new Dictionary<string, List<MethodRecord>>();
         }
 
-        public void AddMethodRecord(string className, string methodName, List<string> methodBody)
+        public void AddMethodRecord(string className, string methodName, List<string> methodBody, bool isEntryPoint)
         {
-            if (!_storage.ContainsKey(className))
-                _storage.Add(className, new Dictionary<string, List<string>>());
-            _storage[className].Add(methodName, methodBody);
-        }
-
-        public Dictionary<string, Dictionary<string, List<string>>> GetStorage()
-        {
-            return _storage;
+            if (!Storage.ContainsKey(className))
+                Storage.Add(className, new List<MethodRecord>());
+            Storage[className].Add(new MethodRecord(className, methodName, methodBody));
+            if (isEntryPoint && EntryPoint == null)
+                EntryPoint = new Tuple<string, string>(className, methodName);
+                
         }
 
         public override string ToString()
         {
-            return "keeper has " + _storage.Count + " classes";
+            return "keeper has " + Storage.Count + " classes";
         }
     }
 }

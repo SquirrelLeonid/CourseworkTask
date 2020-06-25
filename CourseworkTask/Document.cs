@@ -10,13 +10,13 @@ namespace CourseworkTask
     {
         private readonly List<string> _content;
         private readonly string Name;
-        private readonly bool _hasMethodMain;
+        private readonly bool _isEntryPoint;
 
-        public Document(List<string> content, string name, bool hasMethodMain)
+        public Document(List<string> content, string name, bool isEntryPoint)
         {
             _content = content;
             Name = name;
-            _hasMethodMain = hasMethodMain;
+            _isEntryPoint = isEntryPoint;
         }
 
         public void ShowContent()
@@ -34,9 +34,9 @@ namespace CourseworkTask
             return _content;
         }
 
-        public bool HasMethodMain()
+        public bool IsEntryPoint()
         {
-            return _hasMethodMain;
+            return _isEntryPoint;
         }
 
         public string GetName()
@@ -46,7 +46,7 @@ namespace CourseworkTask
 
         public override string ToString()
         {
-            if (_hasMethodMain)
+            if (_isEntryPoint)
                 return Name + " has Main()";
             return Name;
         }
