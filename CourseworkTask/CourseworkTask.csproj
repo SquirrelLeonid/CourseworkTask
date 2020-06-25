@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnchorPoint.cs" />
+    <Compile Include="CodeBlock.cs" />
+    <Compile Include="CodeBlockFormer.cs" />
     <Compile Include="ExceptionLoggerSingleton.cs" />
     <Compile Include="FileParser.cs" />
     <Compile Include="FileReaderSingleton.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="MapModel.cs" />
     <Compile Include="MapOrganiser.cs" />
     <Compile Include="MapVisualizer.cs" />
+    <Compile Include="MethodRecord.cs" />
     <Compile Include="ParsedCodeKeeper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

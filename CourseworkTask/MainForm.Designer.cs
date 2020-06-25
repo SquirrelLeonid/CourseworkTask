@@ -35,13 +35,17 @@
             this.SaveAsКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuMapContainer = new System.Windows.Forms.SplitContainer();
-            this.Panel_Map = new System.Windows.Forms.Panel();
             this.ToggleMenu = new System.Windows.Forms.Button();
+            this.Panel_Map = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.GeneralMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).BeginInit();
             this.MenuMapContainer.Panel1.SuspendLayout();
             this.MenuMapContainer.Panel2.SuspendLayout();
             this.MenuMapContainer.SuspendLayout();
+            this.Panel_Map.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GeneralMenuStrip
@@ -69,26 +73,26 @@
             // CreateToolStripMenuItem
             // 
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
-            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.CreateToolStripMenuItem.Text = "Создать";
             this.CreateToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.SaveToolStripMenuItem.Text = "Сохранить";
             // 
             // SaveAsКакToolStripMenuItem
             // 
             this.SaveAsКакToolStripMenuItem.Name = "SaveAsКакToolStripMenuItem";
-            this.SaveAsКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveAsКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.SaveAsКакToolStripMenuItem.Text = "Сохранить как";
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.LoadToolStripMenuItem.Text = "Открыть";
             // 
             // MenuMapContainer
@@ -115,14 +119,6 @@
             this.MenuMapContainer.SplitterWidth = 1;
             this.MenuMapContainer.TabIndex = 1;
             // 
-            // Panel_Map
-            // 
-            this.Panel_Map.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Panel_Map.Location = new System.Drawing.Point(114, 26);
-            this.Panel_Map.Name = "Panel_Map";
-            this.Panel_Map.Size = new System.Drawing.Size(400, 400);
-            this.Panel_Map.TabIndex = 0;
-            // 
             // ToggleMenu
             // 
             this.ToggleMenu.BackgroundImage = global::CourseworkTask.Properties.Resources.MenuIcon;
@@ -132,6 +128,37 @@
             this.ToggleMenu.TabIndex = 0;
             this.ToggleMenu.UseVisualStyleBackColor = true;
             this.ToggleMenu.Click += new System.EventHandler(this.ToggleMenu_Click);
+            // 
+            // Panel_Map
+            // 
+            this.Panel_Map.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Panel_Map.Controls.Add(this.groupBox1);
+            this.Panel_Map.Location = new System.Drawing.Point(114, 26);
+            this.Panel_Map.Name = "Panel_Map";
+            this.Panel_Map.Size = new System.Drawing.Size(400, 400);
+            this.Panel_Map.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Location = new System.Drawing.Point(29, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 242);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "void Main(stridsgahdghskahdjkshkang[] args)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 10);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 160);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "{\r\n    int a = 3;\r\n    int b = 5;\r\n    Console.WriteLine(a + b)\r\n}";
             // 
             // MainForm
             // 
@@ -152,6 +179,10 @@
             this.MenuMapContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MenuMapContainer)).EndInit();
             this.MenuMapContainer.ResumeLayout(false);
+            this.Panel_Map.ResumeLayout(false);
+            this.Panel_Map.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +199,8 @@
         private System.Windows.Forms.Button ToggleMenu;
         private System.Windows.Forms.SplitContainer MenuMapContainer;
         private System.Windows.Forms.Panel Panel_Map;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

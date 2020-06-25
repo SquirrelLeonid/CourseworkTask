@@ -29,6 +29,7 @@ namespace CourseworkTask
             {
                 string line;
                 bool hasMain = false;
+                bool entryClass = false;
                 List<string> fileContent = new List<string>();
                 try
                 {
@@ -36,7 +37,11 @@ namespace CourseworkTask
                     {
                         while ((line = sr.ReadLine()) != null)
                         {
-                            if (line.Contains("static void Main("))
+                            //entryClass = !Regex.IsMatch(line, @"\s+class\s+(?!Program)\b\s*");
+
+                            bool A = Regex.IsMatch(line, @"\s+void\s+Main\(\)");
+                            bool B = Regex.IsMatch(line, @"\s+void\s+Main\(string\[]\s+args\)");
+                            if (A || B)
                                 hasMain = true;
                             fileContent.Add(line);
                         }

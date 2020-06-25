@@ -10,18 +10,28 @@ namespace CourseworkTask
     {
         private MapModel _mapModel;
         private FileParser _fileParser;
+        private CodeBlockFormer _blockFormer;
 
         public MainForm()
         {
             InitializeComponent();
             InitFieldsState();
+            groupBox1.Size = groupBox1.MaximumSize;
+            Button button = new Button();
+            button.Size = new Size(20,20);
+            button.Text = "v";
+            button.Location = new Point(groupBox1.Width - button.Width, 0);
+            button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox1.Controls.Add(button);
+            button.Visible = true;
             //InitAdditionalEvents();
         }
 
         private void InitFieldsState()
         {
-            _mapModel = new MapModel(Panel_Map);
             _fileParser = new FileParser();
+            _mapModel = new MapModel(Panel_Map);
+            _blockFormer = new CodeBlockFormer();
         }
 
         private void InitAdditionalEvents()
@@ -44,9 +54,11 @@ namespace CourseworkTask
         {
             FilesAddingForm filesAddingForm = new FilesAddingForm();
             filesAddingForm.ShowDialog();
+            //TODO: Нужно как то заменить получение результата. В идеале передавать сюда, а не просить отсюда.
             List<Document> result = filesAddingForm.GetReadResult();
-            _fileParser.ParseCodeListings(result);
-
+            //Начиная с этого момента можно добавить многопоточность
+            ParsedCodeKeeper parseResult = _fileParser.ParseCodeListings(result);
+            //_blockFormer.FormCodeBlocks(parseResult);
         }
         #endregion
 
@@ -62,5 +74,17 @@ namespace CourseworkTask
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (var element in groupBox1.Controls)
+            {
+                if (element is Button)
+                    continue;
+                TextBox box = (TextBox) element;
+                box.Visible = !box.Visible;
+            }
+            groupBox1.Size = groupBox1.Size == groupBox1.MinimumSize ? groupBox1.MaximumSize : groupBox1.MinimumSize;
+        }
     }
 }
