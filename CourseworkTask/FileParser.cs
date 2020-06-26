@@ -422,8 +422,10 @@ namespace CourseworkTask
             string pattern = @"\s*=\s*";
             var splitResult = Regex.Split(line, pattern);
             string afterEqualSign = splitResult[splitResult.Length - 1];
-            splitResult = afterEqualSign.Split('.');
-            string methodName = splitResult[splitResult.Length - 1].Split('(')[0] + "()";
+            splitResult = afterEqualSign.Split('(');
+            string methodName = splitResult[0];
+            splitResult = methodName.Split('.');
+            methodName = splitResult[splitResult.Length - 1] + "()";
             return methodName.Trim();
         }
         private string[] GetClassAndVariableName(string line)
